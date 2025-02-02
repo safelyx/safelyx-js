@@ -12,5 +12,5 @@ jobs:
           deno-version-file: .dvmrc
       - env:
           TEST_KEY_CODE: ${{ secrets.TEST_KEY_CODE }}
-      - run: |
+        run: |
           make test
