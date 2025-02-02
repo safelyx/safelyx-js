@@ -1,0 +1,21 @@
+{
+  "name": "@safelyx/api",
+  "version": "0.1.0",
+  "exports": "./mod.ts",
+  "license": "ISC",
+  "fmt": {
+    "useTabs": false,
+    "lineWidth": 120,
+    "indentWidth": 2,
+    "singleQuote": true,
+    "proseWrap": "preserve",
+    "exclude": ["./npm"]
+  },
+  "lint": {
+    "exclude": ["./npm"]
+  },
+  "test": {
+    "exclude": ["./npm"]
+  },
+  "lock": false
+}
