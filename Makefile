@@ -12,6 +12,6 @@ test:
 .PHONY: publish
 publish:
 	deno run --allow-read --allow-write --allow-net --allow-run --allow-env build-npm.ts
-	cd npm && npm publish
+	cd npm && npm publish --access public
 	deno publish
 	git push origin --tags
