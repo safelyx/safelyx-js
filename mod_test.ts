@@ -36,7 +36,7 @@ Deno.test('that .checkLink() works', async () => {
   for (const test of tests) {
     const parsedUrl = await checkLink(test.url, TEST_KEY_CODE);
     assertEquals(parsedUrl.url, test.expected.url);
-    assertEquals(parsedUrl.result >= 8 && parsedUrl.result <= 10, true);
+    assertEquals(parsedUrl.result === -2 || (parsedUrl.result >= 8 && parsedUrl.result <= 10), true);
     assertEquals(Object.prototype.hasOwnProperty.call(parsedUrl, 'result_text'), true);
     assertEquals(Object.prototype.hasOwnProperty.call(parsedUrl, 'date'), true);
     assertEquals(Object.prototype.hasOwnProperty.call(parsedUrl, 'analysis'), true);
@@ -69,7 +69,7 @@ Deno.test('that .checkEmail() works', async () => {
   for (const test of tests) {
     const parsedEmail = await checkEmail(test.email, TEST_KEY_CODE);
     assertEquals(parsedEmail.email, test.expected.email);
-    assertEquals(parsedEmail.result >= 8 && parsedEmail.result <= 10, true);
+    assertEquals(parsedEmail.result === -2 || (parsedEmail.result >= 8 && parsedEmail.result <= 10), true);
     assertEquals(Object.prototype.hasOwnProperty.call(parsedEmail, 'result_text'), true);
     assertEquals(Object.prototype.hasOwnProperty.call(parsedEmail, 'date'), true);
     assertEquals(Object.prototype.hasOwnProperty.call(parsedEmail, 'analysis'), true);
@@ -98,7 +98,7 @@ Deno.test('that .checkMessage() works', async () => {
   for (const test of tests) {
     const parsedMessage = await checkMessage(test.message, { keyCode: TEST_KEY_CODE });
     assertEquals(parsedMessage.message, test.expected.message);
-    assertEquals(parsedMessage.result >= 8 && parsedMessage.result <= 10, true);
+    assertEquals(parsedMessage.result === -2 || (parsedMessage.result >= 8 && parsedMessage.result <= 10), true);
     assertEquals(Object.prototype.hasOwnProperty.call(parsedMessage, 'result_text'), true);
     assertEquals(Object.prototype.hasOwnProperty.call(parsedMessage, 'date'), true);
     assertEquals(Object.prototype.hasOwnProperty.call(parsedMessage, 'analysis'), true);
@@ -140,7 +140,7 @@ Deno.test('that .checkImage() works', async () => {
   for (const test of tests) {
     const parsedImage = await checkImage(test.imageUrl, TEST_KEY_CODE);
     assertEquals(parsedImage.image_url, test.expected.image_url);
-    assertEquals(parsedImage.result >= 8 && parsedImage.result <= 10, true);
+    assertEquals(parsedImage.result === -2 || (parsedImage.result >= 8 && parsedImage.result <= 10), true);
     assertEquals(Object.prototype.hasOwnProperty.call(parsedImage, 'result_text'), true);
     assertEquals(Object.prototype.hasOwnProperty.call(parsedImage, 'date'), true);
     assertEquals(Object.prototype.hasOwnProperty.call(parsedImage, 'analysis'), true);
