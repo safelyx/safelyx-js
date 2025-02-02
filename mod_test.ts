@@ -1,4 +1,4 @@
-import 'jsr:@std/dotenv@0.225.3/load';
+import 'jsr:@std/dotenv/load';
 import { assertEquals } from 'jsr:@std/assert@1.0.8';
 
 import {
